@@ -1,0 +1,71 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Flask{% endblock %}
+
+{% block head %}
+{{ super() }}
+<!--
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+-->
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Flask</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block page_content %}
+    {% endblock %}
+</div>
+{% endblock %}
+
+<!-- For importing moment.js from the bootstrap -->
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+
+
+<div class = "carousel">
+    <br>
+    <br>
+      {% block carousel %}
+
+      {% endblock %}
+    <br>
+    <br>
+</div>
+<!--
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+-->
+
+<div class="footer" >
+    {% block footer %}
+       <br>
+            <footer>
+                This is my Footer!
+            </footer>
+       <br>
+    {% endblock %}
+</div>
